@@ -351,7 +351,7 @@ parentViewController:(UIViewController*)parentViewController
     self.viewController = [[CDVbcsViewController alloc] initWithProcessor: self alternateOverlay:self.alternateXib];
     // here we set the orientation delegate to the MainViewController of the app (orientation controlled in the Project Settings)
     self.viewController.orientationDelegate = self.plugin.viewController;
-
+    [self.viewController setModalPresentationStyle:UIModalPresentationFullScreen];  // force the Barcode Scanner View Controller to take up the full screen.
     // delayed [self openDialog];
     [self performSelector:@selector(openDialog) withObject:nil afterDelay:1];
 }
